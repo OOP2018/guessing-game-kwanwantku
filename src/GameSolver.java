@@ -1,8 +1,20 @@
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * The gamesolver for guess the number.
+ * It automatically to guess number.
+ * @author Kwanwan Tantichartkul
+ * @version 1.0
+ * @since 12/1/2018
+ */
 public class GameSolver { 
 
+	/**
+	 * The play methods play game by automatically guess the number.
+	 * @param Create object for game.
+	 * @return the answer of guess.
+	 */
 	public int play(NumberGame game) {
 		
 		int max = game.getUpperBound();

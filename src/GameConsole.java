@@ -1,11 +1,18 @@
 import java.util.Scanner;
 
-/** 
- *  Play guessing game on the console.
+/**
+ * Play guessing game on the console.
+ * @author Kwanwan Tantichartkul
+ * @version 1.0
+ * @since 12/1/2018
  */
 public class GameConsole {
 
-	/** play the game. */
+	/** 
+	 * The play method which interact with user.
+	 * @param Create object of game.
+	 * @return answer that you guess.
+	 */
 	public int play(NumberGame game) {
 		
 		// describe the game

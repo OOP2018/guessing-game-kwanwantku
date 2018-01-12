@@ -2,6 +2,9 @@
  * A main class for the GuessingGame.
  * It is responsible for creating objects, 
  * connecting objects, and running the game UI.
+ * @author Kwanwan Tantichartkul
+ * @version 1.0
+ * @since 12.1.2018
  */
 public class Main {
 	public static void main(String[] args) {
