@@ -2,7 +2,7 @@ import java.util.Random;
 
 /**
  * 
- * @author gun_p
+ * @author Kwanwan Tantichartkul
  *
  */
 public class KwanwanGame extends NumberGame {
