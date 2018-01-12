@@ -7,9 +7,14 @@ public class Main {
 	public static void main(String[] args) {
 		// upper limit for secret number in guessing game
 		int upperBound = 100;
-		NumberGame game = new DarmGame(upperBound);
+		NumberGame game = new KwanwanGame(upperBound);
 		GameConsole ui = new GameConsole( );
-		ui.play(game);
+		GameSolver solver = new GameSolver();
+		//ui.play(game);
+		int solution = solver.play(game);
+		System.out.println("play() returned "+solution);
+		System.out.println("Total : "+game.getCount() + " guesses.");
+		
 		
 	}
 }
