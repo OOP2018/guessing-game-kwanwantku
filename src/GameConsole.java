@@ -7,18 +7,26 @@ public class GameConsole {
 
 	/** play the game. */
 	public int play(NumberGame game) {
-		Scanner console = new Scanner(System.in);
 		
 		// describe the game
-		System.out.println( game.toString() );
+		System.out.println( game.toString());
+		System.out.println( game.getMessage());
+		String yourguess = "your guess?";
+		System.out.print(yourguess+" ");
 		
-		// This is just an example.
-		System.out.println( game.getMessage() );
-		System.out.print("Your answer? ");
-		int guess = console.nextInt();
-		boolean correct = game.guess(guess);
-		System.out.println( game.getMessage() );
-		return guess;
+		//user put number to guess
+		Scanner console = new Scanner(System.in);
+		int answer = console.nextInt();
+		
+		while(!game.guess(answer)) {
+			game.getMessage();
+			System.out.println("Sorry !! " +answer+" " + game.getMessage());
+			System.out.print(yourguess + " ");
+			answer = console.nextInt();
+		}
+		System.out.println(game.getMessage()+answer+".");
+		System.out.println("Total : "+game.getCount() + " guesses.");
+		return answer;
 	}
 	
 }
