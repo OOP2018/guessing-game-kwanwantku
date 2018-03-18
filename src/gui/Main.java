@@ -15,7 +15,7 @@ import javafx.fxml.FXMLLoader;
 /**
  * Create a JavaFX user interface with 1 input view
  * and 2 observers that show the counter value, so that all
- * the views refer to the same Counter object.
+ * the views refer to the same Counter object and Guessing game object.
  * @author Kwanwan Tantichartkul
  * @version 1.0
  * @since 2018.03.16
@@ -37,14 +37,9 @@ public class Main extends Application {
 			}
 			// Load the FXML and get reference to the loader
 			FXMLLoader loader = new FXMLLoader(url);
-			// Create the UI. This will instantiate the controller object, too.
 			Parent root = loader.load();
-			// Now we can get the controller object from the FXMLloader.
-			// This is interesting -- we don't need to use a cast!
 			GuessingGameController controller = loader.getController();
 			
-			// Dependency Injection:
-			// Set the Counter object we want the view to update.
 			controller.setCounter(game);
 
 			// Build and show the scene
@@ -62,11 +57,6 @@ public class Main extends Application {
 		// Dependency Injection: 
 		// We set a reference to the counter using the constructor.
 
-		
-		// Create another window that references the SAME counter. 
-		CounterView view = new CounterView(game);
-		game.addObserver(view);
-		view.run();
 	}
 	/**
 	 * Running the counter program

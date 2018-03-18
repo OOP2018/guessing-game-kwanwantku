@@ -23,7 +23,8 @@ public class KwanwanGame extends NumberGame {
 		long seed = System.nanoTime();
 		Random rand = new Random(seed);
 		this.secret = rand.nextInt(upperBound) + 1 ;
-		this.setMessage(String.format("I'm thinking of a number between 1 and %d.",upperBound)); 
+		this.setMessage(String.format("I'm thinking of a number between 1 and %d.",upperBound));
+		setChanged();
 	}
 	
     /**
@@ -36,18 +37,24 @@ public class KwanwanGame extends NumberGame {
 		if(number == secret) {
 			this.setMessage("Right ! The secret number is ");
 			this.count++;
+			setChanged();
+			notifyObservers(number);
 			return true;
 		}
 		
 		else if(number > secret) {
 			this.setMessage("too large");
 			this.count++;
+			setChanged();
+			notifyObservers(number);
 			return false;
 		}
 		
 		else {
 			this.setMessage("too small");
 			this.count++;
+			setChanged();
+			notifyObservers(number);
 			return false;
 		}
 		
